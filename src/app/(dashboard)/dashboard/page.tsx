@@ -15,7 +15,7 @@ export default function DashHome() {
                 {data.map((item) => {
                     return (
                         <>
-                            <FeatureButton data={data} />
+                            <FeatureButton />
                         </>
                     );
                 })}
