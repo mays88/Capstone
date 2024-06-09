@@ -1,0 +1,13 @@
+.featureContainer {
+    display: flex;
+    height: 100%;
+    margin: auto;
+    width: 90%;
+}
+
+.featureSection {
+    margin: auto;
+    width: 50%;
+    height: 100%;
+    border: 1px solid #000;
+}

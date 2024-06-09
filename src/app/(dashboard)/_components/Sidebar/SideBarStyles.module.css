@@ -1,0 +1,22 @@
+.container {
+    width: 15%;
+    height: 100%;
+    border-right: 1px solid #cfae01;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.spacer {
+    width: 75%;
+    height: 0.1rem;
+    background-color: #000;
+    border-radius: 50%;
+}
+.logo {
+    width: 100%;
+    height: 2.9rem;
+    /* border: 1px solid #000; */
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}

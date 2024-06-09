@@ -1,0 +1,30 @@
+.container {
+    background-color: rgba(0, 0, 0, 0.479);
+    height: 80rem;
+    width: 110rem;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 4.5rem;
+    left: 20;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.featureMenu {
+    display: flex;
+    flex-direction: column;
+    background-color: #dcc856ce;
+    width: 75%;
+    height: 600px;
+    margin-top: 50px;
+    cursor: default;
+    border-radius: 2em;
+}
+.closeIcon {
+    align-self: flex-end;
+    justify-content: center;
+    padding: 15px 25px;
+    position: fixed;
+    cursor: pointer;
+}
