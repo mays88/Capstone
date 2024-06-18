@@ -1,0 +1,10 @@
+.modal {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 500px;
+    height: 300px;
+    border: 1px solid #a3a3a36e;
+    margin: auto;
+    border-radius: 10px;
+}

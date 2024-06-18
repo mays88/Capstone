@@ -1,5 +1,5 @@
 import styles from "./styles/layoutstyles.module.css";
-function layout({ children }) {
+function layout({ children }: { children: React.ReactNode }) {
     return (
         <div className={styles.homelayout}>
             <div>Home Layout</div>

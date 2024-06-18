@@ -1,19 +1,51 @@
-import styles from "./FeatureMain.module.css";
-import FeatureSection from "./FeatureSection/FeatureSection";
+"use client";
 
-function FeatureMain() {
-    const isOpen = true;
+import { useState } from "react";
+import styles from "./FeatureMain.module.css";
+import FeaturesSection from "./FeaturesSection/FeaturesSection";
+import { featureWindowProps } from "@/lib/types";
+import FeatureButtonContainer from "../FeatureButtonContainer/FeatureButtonContainer";
+import FeatureButton from "../FeatureButton/FeatureButton";
+
+import { data } from "@/data/data";
+type FeatureMainProps = {
+    showFeatureWindow: featureWindowProps;
+    showWindow: boolean;
+};
+function FeatureMain({ showWindow, showFeatureWindow }: FeatureMainProps) {
+    console.log(data);
+
+    const [feature, setFeature] = useState("");
     return (
         <>
-            {isOpen && (
-                <div className={styles.container}>
-                    <div className={styles.featureMenu}>
-                        <div className={styles.closeIcon}>X</div>
+            <FeatureButtonContainer>
+                {data.map((item) => {
+                    return (
+                        <>
+                            <FeatureButton
+                                showFeatureWindow={showFeatureWindow}
+                                feature={item.name}
+                                setFeature={setFeature}
+                            />
+                        </>
+                    );
+                })}
+            </FeatureButtonContainer>
+            <div>
+                {showWindow && (
+                    <div className={styles.container}>
+                        <div className={styles.featureMenu}>
+                            <div
+                                onClick={() => showFeatureWindow(false)}
+                                className={styles.closeIcon}>
+                                X
+                            </div>
 
-                        <FeatureSection />
+                            <FeaturesSection feature={feature} />
+                        </div>
                     </div>
-                </div>
-            )}
+                )}
+            </div>
         </>
     );
 }

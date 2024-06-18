@@ -28,3 +28,9 @@
     position: fixed;
     cursor: pointer;
 }
+
+.featureGrid {
+    display: flex;
+    gap: 25px;
+    margin: 100px;
+}

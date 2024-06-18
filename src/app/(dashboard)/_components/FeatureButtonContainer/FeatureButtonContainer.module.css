@@ -1,0 +1,12 @@
+.container {
+    width: 7rem;
+    height: 7rem;
+    border: 1px solid black;
+    border-radius: 15%;
+}
+
+.featureGrid {
+    display: flex;
+    gap: 25px;
+    margin: 100px;
+}
