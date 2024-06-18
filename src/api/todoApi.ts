@@ -1,5 +1,3 @@
-import { useSelector, useDispatch } from "react-redux";
-import { selectTodos } from "@/slices/todosSlice";
 import axios from "axios";
 
 export async function getTask() {
