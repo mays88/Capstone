@@ -14,12 +14,11 @@ function TodoList() {
     const { data, loading, error } = useSelector(
         (state: RootState) => state.todos
     );
+    const todos = useSelector(selectTodos);
 
     useEffect(() => {
         dispatch(fetchData());
     }, [dispatch]);
-    const todos = useSelector(selectTodos);
-    console.log(todos);
 
     return (
         <>

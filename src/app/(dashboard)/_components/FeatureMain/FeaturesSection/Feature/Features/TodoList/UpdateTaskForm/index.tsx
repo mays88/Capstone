@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 // import { Button } from "../styles/Button.styled";
 // import { IoClose } from "react-icons/io5";
@@ -22,6 +22,7 @@ function UpdateTaskForm({
         // updateTweet(tweet.id, newTweetContent);
         setShowModal(false);
     };
+
     return (
         <div className={styles.modal}>
             <div className="closeIcon">

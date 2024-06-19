@@ -1,6 +1,6 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-import { createTask, deleteTask, getTask } from "@/api/todoApi";
+import { createTask, deleteTask, updTask } from "@/api/todoApi";
 import { AppThunk, RootState } from "@/redux/store";
 import axios from "axios";
 
@@ -28,10 +28,11 @@ export const fetchData = (): AppThunk => async (dispatch) => {
 export const fetchTodos = async () => {
     try {
         const response = await axios.get(
-            "https://jsonplaceholder.typicode.com/todos"
+            "https://oyster-app-3xg9q.ondigitalocean.app/api/v1/todos"
         );
+        console.log(response.data.data.todos);
 
-        return response.data;
+        return response.data.data.todos;
     } catch (error) {
         console.error(error);
     }
@@ -50,11 +51,17 @@ export const todosSlice = createSlice({
             // state.todos.filter((t) => t.id !== action.payload.id);
         },
         updateTask: (state, action) => {
-            state.data.map((t) => {
-                if (t.id === action.payload.id) {
-                    t.title = action.payload.title;
-                } else return t;
-            });
+            updTask(action.payload);
+
+            // return {
+            //     ...state,
+            //     todos: [...state.data, action.payload],
+            // };
+            // state.data.map((t) => {
+            //     if (t.id === action.payload.id) {
+            //         t.title = action.payload.title;
+            //     } else return t;
+            // });
         },
         fetchDataStart(state) {
             state.loading = true;

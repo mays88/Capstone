@@ -1,21 +1,10 @@
 import axios from "axios";
 
-export async function getTask() {
-    try {
-        const response = await axios.get(
-            "https://jsonplaceholder.typicode.com/todos"
-        );
-
-        return response.data;
-    } catch (error) {
-        console.error(error);
-    }
-}
 export async function createTask(task: any) {
     try {
         const response = await axios.post(
-            `https://jsonplaceholder.typicode.com/todos/`,
-            { id: 202, userId: 88, completed: false, title: task.title }
+            `https://oyster-app-3xg9q.ondigitalocean.app/api/v1/todos`,
+            { userId: 88, completed: false, title: task.title }
         );
         console.log(response.data);
 
@@ -25,10 +14,10 @@ export async function createTask(task: any) {
     }
 }
 
-export async function updateTask(task: any) {
+export async function updTask(task: any) {
     try {
         const response = await axios.patch(
-            `https://jsonplaceholder.typicode.com/todos/${task.id}`,
+            `https://oyster-app-3xg9q.ondigitalocean.app/api/v1/todos/${task.id}`,
             { ...task, title: task.title }
         );
 
@@ -40,10 +29,9 @@ export async function updateTask(task: any) {
 export async function deleteTask(taskId: any) {
     try {
         const response = await axios.delete(
-            `https://jsonplaceholder.typicode.com/todos/${taskId}`
-            // { id: taskId }
+            `https://oyster-app-3xg9q.ondigitalocean.app/api/v1/todos/${taskId}`
         );
-        // console.log(response.data);
+
         return response.data;
     } catch (error) {
         console.error(error);
