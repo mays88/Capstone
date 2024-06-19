@@ -1,45 +1,44 @@
+"use client";
+import { useEffect } from "react";
+import { RootState, useAppDispatch } from "@/redux/store";
+import { fetchData } from "@/slices/todosSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { selectTodos } from "@/slices/todosSlice";
 import Task from "./Task";
 import CreateTodoForm from "./CreateTodoForm";
 // import { v4 as uuidv4 } from "uuid";
-import axios from "axios";
+import styles from "./TodoList.module.css";
 
 function TodoList() {
+    const dispatch = useAppDispatch();
+    const { data, loading, error } = useSelector(
+        (state: RootState) => state.todos
+    );
+
+    useEffect(() => {
+        dispatch(fetchData());
+    }, [dispatch]);
     const todos = useSelector(selectTodos);
-    // const dispatch = useDispatch();
-
-    // const removeTweet = (tweetId) => {
-    //     setTweets(tweets.filter((t) => t._d !== tweetId));
-    // };
-
-    // const updateTweet = (tweetId, newTweetContent) => {
-    //     setTweets(
-    //         tweets.map((t) => {
-    //             if (t.id === tweetId && newTweetContent) {
-    //                 return {
-    //                     ...t,
-    //                     content: newTweetContent,
-    //                 };
-    //             } else return t;
-    //         })
-    //     );
-    // };
+    console.log(todos);
 
     return (
         <>
-            <CreateTodoForm />
-            {/* {todos &&
-                todos.map((item: any) => {
-                    return (
-                        <Task
-                            key={item.id}
-                            task={item}
-                            // removeTweet={removeTweet}
-                            // updateTweet={updateTweet}
-                        />
-                    );
-                })} */}
+            <div className={styles.todoWrapper}>
+                <h1>Todo List</h1>
+                <CreateTodoForm />
+
+                {todos &&
+                    todos.map((item: any) => {
+                        return (
+                            <Task
+                                key={item.id}
+                                task={item}
+                                // removeTweet={removeTweet}
+                                // updateTweet={updateTweet}
+                            />
+                        );
+                    })}
+            </div>
         </>
     );
 }

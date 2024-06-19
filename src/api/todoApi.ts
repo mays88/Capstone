@@ -11,6 +11,19 @@ export async function getTask() {
         console.error(error);
     }
 }
+export async function createTask(task: any) {
+    try {
+        const response = await axios.post(
+            `https://jsonplaceholder.typicode.com/todos/`,
+            { id: 202, userId: 88, completed: false, title: task.title }
+        );
+        console.log(response.data);
+
+        return response.data;
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 export async function updateTask(task: any) {
     try {
@@ -30,7 +43,7 @@ export async function deleteTask(taskId: any) {
             `https://jsonplaceholder.typicode.com/todos/${taskId}`
             // { id: taskId }
         );
-        console.log(response.data);
+        // console.log(response.data);
         return response.data;
     } catch (error) {
         console.error(error);

@@ -17,15 +17,12 @@ function UpdateTaskForm({
     const [newTaskContent, setNewTaskContent] = useState(task.title);
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(newTaskContent);
+
         dispatch(updateTask({ id: task.id, title: newTaskContent }));
         // updateTweet(tweet.id, newTweetContent);
         setShowModal(false);
     };
     return (
-        // <>
-        //     <h1>MODAL</h1>
-        // </>
         <div className={styles.modal}>
             <div className="closeIcon">
                 <button

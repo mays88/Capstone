@@ -1,26 +1,48 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-import { deleteTask, getTask } from "@/api/todoApi";
-import { RootState } from "@/redux/store";
-type Todo = {
-    userId: 1;
-    id: 1;
-    title: "delectus aut autem";
-    completed: false;
+import { createTask, deleteTask, getTask } from "@/api/todoApi";
+import { AppThunk, RootState } from "@/redux/store";
+import axios from "axios";
+
+type MyState = {
+    data: any;
+    loading: boolean;
+    error: string | null;
 };
-const todos = async () => {
-    const response = await getTask();
-    return response;
+
+const initialState: MyState = {
+    data: null,
+    loading: false,
+    error: null,
+};
+// const todos = getTask();
+export const fetchData = (): AppThunk => async (dispatch) => {
+    try {
+        dispatch(fetchDataStart());
+        const data = await fetchTodos(); // Replace this with your promise function
+        dispatch(fetchDataSuccess(data));
+    } catch (error: any) {
+        dispatch(fetchDataFailure(error.message));
+    }
+};
+export const fetchTodos = async () => {
+    try {
+        const response = await axios.get(
+            "https://jsonplaceholder.typicode.com/todos"
+        );
+
+        return response.data;
+    } catch (error) {
+        console.error(error);
+    }
 };
 
 export const todosSlice = createSlice({
     name: "todos",
-    initialState: {
-        todos: todos,
-    },
+    initialState,
     reducers: {
         addTask: (state, action) => {
-            updateTask(action.payload);
+            createTask(action.payload);
         },
         removeTask: (state, action) => {
             deleteTask(action.payload.id);
@@ -28,13 +50,23 @@ export const todosSlice = createSlice({
             // state.todos.filter((t) => t.id !== action.payload.id);
         },
         updateTask: (state, action) => {
-            console.log(state.todos);
-
-            // state.todos.map((t) => {
-            //     if (t.id === action.payload.id) {
-            //         t.title = action.payload.title;
-            //     } else return t;
-            // });
+            state.data.map((t) => {
+                if (t.id === action.payload.id) {
+                    t.title = action.payload.title;
+                } else return t;
+            });
+        },
+        fetchDataStart(state) {
+            state.loading = true;
+            state.error = null;
+        },
+        fetchDataSuccess(state, action: PayloadAction<any>) {
+            state.loading = false;
+            state.data = action.payload;
+        },
+        fetchDataFailure(state, action: PayloadAction<string>) {
+            state.loading = false;
+            state.error = action.payload;
         },
         // editTask:
         // increase: (state, action) => {
@@ -51,7 +83,14 @@ export const todosSlice = createSlice({
 export default todosSlice.reducer;
 
 // Selectors
-export const selectTodos = (state: RootState) => state.todos.todos;
+export const selectTodos = (state: RootState) => state.todos.data;
 
 // Actions
-export const { addTask, removeTask, updateTask } = todosSlice.actions;
+export const {
+    addTask,
+    removeTask,
+    updateTask,
+    fetchDataStart,
+    fetchDataSuccess,
+    fetchDataFailure,
+} = todosSlice.actions;

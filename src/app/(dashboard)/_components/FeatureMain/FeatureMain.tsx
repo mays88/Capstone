@@ -13,21 +13,18 @@ type FeatureMainProps = {
     showWindow: boolean;
 };
 function FeatureMain({ showWindow, showFeatureWindow }: FeatureMainProps) {
-    console.log(data);
-
     const [feature, setFeature] = useState("");
     return (
         <>
             <FeatureButtonContainer>
                 {data.map((item) => {
                     return (
-                        <>
-                            <FeatureButton
-                                showFeatureWindow={showFeatureWindow}
-                                feature={item.name}
-                                setFeature={setFeature}
-                            />
-                        </>
+                        <FeatureButton
+                            key={item.id}
+                            showFeatureWindow={showFeatureWindow}
+                            feature={item.name}
+                            setFeature={setFeature}
+                        />
                     );
                 })}
             </FeatureButtonContainer>
