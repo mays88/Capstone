@@ -13,8 +13,8 @@ export default async function Home() {
                     The Life and Family management app.
                 </h1>
                 <p>Where Unity meets Progression</p>
-                <Link href="/shop">
-                    <div>Explore Products</div>
+                <Link className={styles.shopLink} href="/shop">
+                    Explore Products
                 </Link>
             </div>
 

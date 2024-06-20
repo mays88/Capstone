@@ -9,5 +9,5 @@ export const data = [
     { id: 8, name: "Budget", icon: "" },
     { id: 9, name: "Reminders", icon: "" },
     { id: 10, name: "Events", icon: "" },
-    { id: 11, name: "Message/Linkup/Chat", icon: "" },
+    { id: 11, name: "Chat", icon: "" },
 ];

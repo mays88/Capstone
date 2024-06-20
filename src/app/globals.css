@@ -7,3 +7,18 @@
 body {
     background-color: #dcc756;
 }
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #646464;
+}
+a:visited {
+    color: #000;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}

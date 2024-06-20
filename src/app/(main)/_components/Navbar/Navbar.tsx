@@ -21,6 +21,7 @@ function Navbar() {
                 <Link className={styles.links} href="/capstone">
                     Capstone
                 </Link>
+                <Link className={styles.loginButton} href="/auth">Sign-In</Link>
             </div>
         </div>
     );

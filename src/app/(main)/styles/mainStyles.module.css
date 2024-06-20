@@ -1,6 +1,16 @@
 .mainContainer {
     display: flex;
 }
+.shopLink {
+    padding: 1em;
+    height: 3.75em;
+    width: 3.75em;
+    background-color: #d9c147;
+    border: 2px solid #d1b000;
+    box-shadow: 0px 3px 5px 1px #636363;
+    border-radius: 10px;
+    margin: 0.125em;
+}
 
 .leftPanel {
     width: 50%;
@@ -8,6 +18,10 @@
     border: 1px solid black;
     align-content: center;
     text-align: center;
+}
+
+.leftPanel p {
+    margin-bottom: 2em;
 }
 .rightPanel {
     width: 50%;
