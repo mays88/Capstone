@@ -1,0 +1,26 @@
+.capstoneContainer {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.capstoneContainer h1 {
+    text-decoration: underline;
+    padding-bottom: 0.5em;
+}
+.capstoneContainer h2 {
+    text-decoration: underline;
+    padding: 0.5em 0;
+    color: rgb(126, 35, 35);
+}
+.capstoneContainer h3 {
+    text-decoration: underline;
+    padding: 1.5em 0 0.5em 0;
+}
+.capstoneContainer p {
+    background-color: rgba(0, 0, 0, 0.445);
+    color: white;
+    padding: 0.3em;
+}
