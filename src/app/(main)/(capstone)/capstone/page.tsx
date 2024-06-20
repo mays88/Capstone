@@ -74,6 +74,7 @@ export default function Capstone() {
             <h3>Use MongoDB to create a database for your application.</h3>
             <p>Used MongoDB to create the Capstone database for my project</p>
             <h3>Apply appropriate indexes to your database collections.</h3>
+            <p>Added UserID Index to TodoSchema</p>
             <h3>
                 Create reasonable schemas for your data by following data
                 modeling best practices.
