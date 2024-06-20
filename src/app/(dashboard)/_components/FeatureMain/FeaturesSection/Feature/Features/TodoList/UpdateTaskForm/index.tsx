@@ -21,10 +21,8 @@ function UpdateTaskForm({
 
         const res = await updTask(task);
 
-        console.log(res.data);
-
         dispatch(updateTask({ id: task._id, title: newTaskContent }));
-        // updateTweet(tweet.id, newTweetContent);
+
         setShowModal(false);
     };
 

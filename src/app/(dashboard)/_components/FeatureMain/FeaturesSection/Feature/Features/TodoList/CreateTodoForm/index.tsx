@@ -14,7 +14,6 @@ function CreateTodoForm() {
         }
 
         const data = await createTask(content);
-        console.log(data.data.todo);
 
         dispatch(addTask(data.data.todo));
         setContent("");
