@@ -1,0 +1,13 @@
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5rem;
+    padding: 0 1em;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.432);
+}
+
+.links {
+    padding: 10px;
+    border-left: 1px solid gray;
+}

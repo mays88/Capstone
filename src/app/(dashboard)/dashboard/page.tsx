@@ -11,11 +11,6 @@ export default function DashHome() {
     const [featureWindow, setFeatureWindow] = useState(false);
     return (
         <div className="">
-            <h1>Dash Home</h1>
-            <a href="/">
-                <h4>Home</h4>
-            </a>
-
             <FeatureMain
                 showWindow={featureWindow}
                 showFeatureWindow={setFeatureWindow}

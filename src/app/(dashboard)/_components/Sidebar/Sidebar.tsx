@@ -1,15 +1,18 @@
+import Link from "next/link";
 import styles from "./SideBarStyles.module.css";
 
 function Sidebar() {
     return (
         <div className={styles.container}>
             <div className={styles.logo}>
-                <h1 className="img">LOGO</h1>
+                <Link href="/">
+                    <h1 className="img">LOGO</h1>
+                </Link>
             </div>
             <span className={styles.spacer}></span>
-            <a>HOME</a>
-            <a>SHOP</a>
-            <a>SETTINGS</a>
+            <Link href="/dashboard">HOME</Link>
+            <Link href="/dashboard/shop">SHOP</Link>
+            <Link href="/dashboard/settings">SETTINGS</Link>
         </div>
     );
 }

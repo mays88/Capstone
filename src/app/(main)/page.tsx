@@ -1,11 +1,26 @@
+import Link from "next/link";
+import styles from "./styles/mainStyles.module.css";
+import Image from "next/image";
+import HeroImage from "./assets/hero.png";
+
 export default async function Home() {
     // const recipes = await getRecipes();
     return (
-        <div className="">
-            <h1>HOME</h1>
-            <a href="/dashboard">
-                <h4>DashBoard</h4>
-            </a>
+        <div className={styles.mainContainer}>
+            <div className={styles.leftPanel}>
+                <h1>
+                    Welcome to <br />
+                    The Life and Family management app.
+                </h1>
+                <p>Where Unity meets Progression</p>
+                <Link href="/shop">
+                    <div>Explore Products</div>
+                </Link>
+            </div>
+
+            <div className={styles.rightPanel}>
+                <Image src={HeroImage} alt="Hero" placeholder="blur" />
+            </div>
         </div>
     );
 }

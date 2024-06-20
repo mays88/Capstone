@@ -1,0 +1,18 @@
+.mainContainer {
+    display: flex;
+}
+
+.leftPanel {
+    width: 50%;
+    height: 80vh;
+    border: 1px solid black;
+    align-content: center;
+    text-align: center;
+}
+.rightPanel {
+    width: 50%;
+    height: 80vh;
+    border: 1px solid black;
+    align-content: center;
+    justify-self: center;
+}

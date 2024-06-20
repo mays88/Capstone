@@ -38,7 +38,7 @@ export const fetchTodos = async () => {
     }
 };
 
-export const todosSlice = createSlice({
+const todosSlice = createSlice({
     name: "todos",
     initialState,
     reducers: {

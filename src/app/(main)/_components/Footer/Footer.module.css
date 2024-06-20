@@ -1,0 +1,11 @@
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5rem;
+    padding: 0 1em;
+}
+
+.links {
+    padding: 10px;
+}

@@ -1,0 +1,9 @@
+.itemContainer {
+    display: flex;
+    padding: 3em;
+    gap: 30px;
+}
+
+.item {
+    border: 1px solid black;
+}
