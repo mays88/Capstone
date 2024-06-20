@@ -1,4 +1,4 @@
-import Shop from "../../../(shop)/_components/Shop";
+import Shop from "../../../(main)/(shop)/_components/Shop";
 
 export default async function DashShop() {
     // const recipes = await getRecipes();

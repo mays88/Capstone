@@ -5,9 +5,6 @@ import styles from "./styles/main.module.css";
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/utils/supabase/server";
-// const MainStyle = styled.div`
-//     display: flex;
-// `;
 
 export default async function DashLayout({ children }: { children: any }) {
     const supabase = createClient();

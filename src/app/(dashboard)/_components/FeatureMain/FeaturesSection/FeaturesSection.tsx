@@ -27,14 +27,5 @@ function FeaturesSection({ feature }: FeatureSectionProps) {
             })}
         </>
     );
-    // return (
-    //     <div className={styles.featureContainer}>
-    //         <div className={styles.featureSettings}>Feature Settings</div>
-    //         <div className={styles.featureSection}>
-    //             <div>{feature}</div>
-    //         </div>
-    //         <div className={styles.featureQuickLaunch}>Quick Launch</div>
-    //     </div>
-    // );
 }
 export default FeaturesSection;

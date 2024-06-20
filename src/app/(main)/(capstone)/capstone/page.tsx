@@ -11,6 +11,10 @@ export default function Capstone() {
             </h3>
             <p>Project is organized in a structured way. </p>
             <h3>Project contains an appropriate level of comments.</h3>
+            <p>
+                Most aspects of the project contain names that describes the
+                data, comments will be placed where needed
+            </p>
             <h3>
                 Project is pushed to GitHub, and contains a README file that
                 documents the project, including an overall description of the

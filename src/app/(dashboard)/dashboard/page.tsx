@@ -7,7 +7,6 @@ import FeatureButtonContainer from "../_components/FeatureButtonContainer/Featur
 import { useState } from "react";
 
 export default function DashHome() {
-    // const featureWindow = true;
     const [featureWindow, setFeatureWindow] = useState(false);
     return (
         <div className="">
