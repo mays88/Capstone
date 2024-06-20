@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
-import { useSelector, useDispatch } from "react-redux";
-import { removeTask, selectTodos } from "@/slices/todosSlice";
+import { useDispatch } from "react-redux";
+import { removeTask } from "@/slices/todosSlice";
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import UpdateTaskForm from "../UpdateTaskForm";
@@ -14,9 +13,6 @@ function Task({ task }: TaskProps) {
     const [showModal, setShowModal] = useState(false);
     const [checked, setChecked] = useState(false);
     const dispatch = useDispatch();
-
-    // const todos = useSelector(selectTodos);
-    // const [showModal, setShowModal] = useState(false);
     const checkHandler = () => {
         setChecked(!checked);
     };
@@ -61,6 +57,7 @@ function Task({ task }: TaskProps) {
                                 className={styles.formButton}
                                 onClick={(e) => {
                                     e.preventDefault();
+
                                     dispatch(removeTask({ id: task.id }));
                                 }}>
                                 delete

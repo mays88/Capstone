@@ -30,7 +30,6 @@ export const fetchTodos = async () => {
         const response = await axios.get(
             "https://oyster-app-3xg9q.ondigitalocean.app/api/v1/todos"
         );
-        console.log(response.data.data.todos);
 
         return response.data.data.todos;
     } catch (error) {
@@ -43,12 +42,19 @@ const todosSlice = createSlice({
     initialState,
     reducers: {
         addTask: (state, action) => {
-            createTask(action.payload);
+            state.data.unshift(action.payload);
         },
         removeTask: (state, action) => {
             deleteTask(action.payload.id);
-            // console.log(action.payload.id);
-            // state.todos.filter((t) => t.id !== action.payload.id);
+            const { id } = action.payload;
+            const existingTodo = state.data.find(
+                (todo: any) => todo._id === id
+            );
+            console.log(state.data);
+
+            if (existingTodo) {
+                return state.data.filter((todo: any) => todo._id !== id);
+            }
         },
         updateTask: (state, action) => {
             updTask(action.payload);
@@ -57,11 +63,11 @@ const todosSlice = createSlice({
             //     ...state,
             //     todos: [...state.data, action.payload],
             // };
-            // state.data.map((t) => {
-            //     if (t.id === action.payload.id) {
-            //         t.title = action.payload.title;
-            //     } else return t;
-            // });
+            state.data.map((t: any) => {
+                if (t._id === action.payload.id) {
+                    t.title = action.payload.title;
+                } else return t;
+            });
         },
         fetchDataStart(state) {
             state.loading = true;

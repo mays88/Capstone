@@ -1,26 +1,22 @@
-/* eslint-disable react/prop-types */
 import { useDispatch, useSelector } from "react-redux";
 import { addTask } from "@/slices/todosSlice";
 import { useState } from "react";
 import styles from "./CreateTodo.module.css";
+import { createTask } from "@/api/todoApi";
 function CreateTodoForm() {
     const dispatch = useDispatch();
     const [content, setContent] = useState("");
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!content) {
             return;
         }
 
-        dispatch(
-            addTask({
-                userId: 1,
-                id: Math.random() + 10 * 10,
-                title: content,
-                completed: false,
-            })
-        );
+        const data = await createTask(content);
+        console.log(data.data.todo);
+
+        dispatch(addTask(data.data.todo));
         setContent("");
     };
     return (

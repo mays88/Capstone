@@ -1,12 +1,11 @@
 import axios from "axios";
 
-export async function createTask(task: any) {
+export async function createTask(task: string) {
     try {
         const response = await axios.post(
             `https://oyster-app-3xg9q.ondigitalocean.app/api/v1/todos`,
-            { userId: 88, completed: false, title: task.title }
+            { userId: 88, completed: false, title: task }
         );
-        console.log(response.data);
 
         return response.data;
     } catch (error) {

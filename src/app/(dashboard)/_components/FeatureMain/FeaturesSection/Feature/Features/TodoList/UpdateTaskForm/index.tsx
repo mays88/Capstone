@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 // import { Modal } from "../styles/Modal.styled";
 import { updateTask } from "@/slices/todosSlice";
 import styles from "./UpdateTaskForm.module.css";
+import { updTask } from "@/api/todoApi";
 function UpdateTaskForm({
     task,
     setShowModal,
@@ -15,10 +16,14 @@ function UpdateTaskForm({
 }) {
     const dispatch = useDispatch();
     const [newTaskContent, setNewTaskContent] = useState(task.title);
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        dispatch(updateTask({ id: task.id, title: newTaskContent }));
+        const res = await updTask(task);
+
+        console.log(res.data);
+
+        dispatch(updateTask({ id: task._id, title: newTaskContent }));
         // updateTweet(tweet.id, newTweetContent);
         setShowModal(false);
     };
