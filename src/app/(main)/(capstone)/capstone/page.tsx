@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./capstone.module.css";
 
 export default function Capstone() {
@@ -151,6 +152,28 @@ export default function Capstone() {
                 Discuss additional features that could be added to the
                 application in the future.
             </h3>
+            <h2>(5%) Extra Credit</h2>
+            <h3>
+                Adhere to Agile principles and the Scrum framework. Perform
+                stand-up sessions (with an instructor) when possible.
+            </h3>
+
+            <h3>
+                Successfully track your project using a software similar to
+                Jira.
+            </h3>
+            <p>
+                Started tracking project with Trello, However, I already started
+                tracking in Word. I continued to use my word document.
+            </p>
+            <Link href="https://drive.google.com/file/d/1XISnsQaZjugld2yeMUSntm4RnlTYfTq4/view?usp=sharing">
+                PDF Form of Tracking and Planning
+            </Link>
+            <h3>Build your application primarily with TypeScript.</h3>
+            <p>
+                I built my frontend with TypeScript, ran out of time but will be
+                converting the backend very soon.
+            </p>
         </div>
     );
 }
