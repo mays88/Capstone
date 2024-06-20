@@ -140,19 +140,51 @@ export default function Capstone() {
             <h2>(5%) Presentation</h2>
             <h3>Create a short overview of your application.</h3>
 
+            <p>
+                Todo List that will be a feature within the Life and Family
+                management app with a Node Express Api. The web framework will
+                be managed with the MERN stack combined with Next JS, TypeScript
+                and Supabase.
+            </p>
+
             <h3>Highlight the use cases of your application.</h3>
+            <p>
+                The Todo List serves to provide a layer of organization in the
+                grand scheme of the overall Management App.
+            </p>
             <h3>
                 Highlight the technical functionality of the application, from a
                 high-level perspective.
             </h3>
+            <p>
+                As thoughts of scaling comes into mind, I use scalable tools
+                such as redux to help manage state, maybe I would opt to use
+                Docker and Kubernetes if I decided I needed a containerized
+                infrastructure, which is something I am considering.
+            </p>
             <h3>
                 Discuss what you have learned through the development of the
                 application.
             </h3>
+            <p>
+                While developing this application, I became better with
+                typescript all around and picking up Redux, getting it to work
+                most of the time, has expanded my imagination on what I can
+                create. Working in the Backend with Express, has made me
+                realized that I love full-stack and shouldn’t limit myself to
+                Frontend development.
+            </p>
             <h3>
                 Discuss additional features that could be added to the
                 application in the future.
             </h3>
+            <p>
+                Some Additional Features that I will be adding to the app will
+                be more Life and Family management tools, As well as an
+                Ecommerce platform. For the overall System, I envision it to be
+                an overall ecosystem for content creators, developers, business
+                minds, and entrepreneurs.
+            </p>
             <h2>(5%) Extra Credit</h2>
             <h3>
                 Adhere to Agile principles and the Scrum framework. Perform
