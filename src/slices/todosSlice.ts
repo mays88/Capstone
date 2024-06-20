@@ -46,15 +46,6 @@ const todosSlice = createSlice({
         },
         removeTask: (state, action) => {
             deleteTask(action.payload.id);
-            const { id } = action.payload;
-            const existingTodo = state.data.find(
-                (todo: any) => todo._id === id
-            );
-            console.log(state.data);
-
-            if (existingTodo) {
-                return state.data.filter((todo: any) => todo._id !== id);
-            }
         },
         updateTask: (state, action) => {
             updTask(action.payload);
