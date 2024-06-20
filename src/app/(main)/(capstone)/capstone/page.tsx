@@ -20,7 +20,10 @@ export default function Capstone() {
                 documents the project, including an overall description of the
                 project.
             </h3>
-
+            <p>
+                Updated README with a description of the project as well as
+                links to my deployments.
+            </p>
             <h3>
                 Standard naming conventions are used throughout the project.
             </h3>
