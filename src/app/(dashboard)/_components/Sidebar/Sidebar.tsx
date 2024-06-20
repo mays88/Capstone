@@ -10,9 +10,9 @@ function Sidebar() {
                 </Link>
             </div>
             <span className={styles.spacer}></span>
-            <Link href="/dashboard">HOME</Link>
-            <Link href="/dashboard/shop">SHOP</Link>
-            <Link href="/dashboard/settings">SETTINGS</Link>
+            <Link className={styles.linkStyles} href="/dashboard">HOME</Link>
+            <Link className={styles.linkStyles} href="/dashboard/shop">SHOP</Link>
+            <Link className={styles.linkStyles} href="/dashboard/settings">SETTINGS</Link>
         </div>
     );
 }

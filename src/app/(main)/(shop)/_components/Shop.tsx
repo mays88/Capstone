@@ -8,33 +8,33 @@ const items = [
     },
     {
         id: 2,
-        name: "T-Shirt",
-        description: "T-Shirt made of clouds from Olympus, approved by Zues.",
+        name: "Pants",
+        description: "Pants made of clouds from Olympus, approved by Zues.",
     },
     {
         id: 3,
-        name: "T-Shirt",
-        description: "T-Shirt made of clouds from Olympus, approved by Zues.",
+        name: "Shoes",
+        description: "Shoes made of clouds from Olympus, approved by Zues.",
     },
     {
         id: 4,
-        name: "T-Shirt",
-        description: "T-Shirt made of clouds from Olympus, approved by Zues.",
+        name: "Belt",
+        description: "Belt made of clouds from Olympus, approved by Zues.",
     },
     {
         id: 5,
-        name: "T-Shirt",
-        description: "T-Shirt made of clouds from Olympus, approved by Zues.",
+        name: "Socks",
+        description: "Socks made of clouds from Olympus, approved by Zues.",
     },
     {
         id: 6,
-        name: "T-Shirt",
-        description: "T-Shirt made of clouds from Olympus, approved by Zues.",
+        name: "Glasses",
+        description: "Glasses made of clouds from Olympus, approved by Zues.",
     },
     {
         id: 7,
-        name: "T-Shirt",
-        description: "T-Shirt made of clouds from Olympus, approved by Zues.",
+        name: "Hat",
+        description: "Hat made of clouds from Olympus, approved by Zues.",
     },
 ];
 

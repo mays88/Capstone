@@ -2,8 +2,20 @@
     display: flex;
     padding: 3em;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .item {
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20em;
+    width: 25em;
+    background-color: #d9c147;
+    border: 2px solid #d1b000;
+    box-shadow: 0px 3px 5px 1px #636363;
+    border-radius: 10px;
+    margin: 0.125em;
+    padding: 2em;
 }
