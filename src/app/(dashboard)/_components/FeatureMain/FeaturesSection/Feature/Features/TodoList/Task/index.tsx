@@ -4,6 +4,7 @@ import { removeTask, selectTodos } from "@/slices/todosSlice";
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import UpdateTaskForm from "../UpdateTaskForm";
+import styles from "./Task.module.css";
 
 type TaskProps = {
     task: any;
@@ -11,10 +12,14 @@ type TaskProps = {
 
 function Task({ task }: TaskProps) {
     const [showModal, setShowModal] = useState(false);
+    const [checked, setChecked] = useState(false);
     const dispatch = useDispatch();
 
     // const todos = useSelector(selectTodos);
     // const [showModal, setShowModal] = useState(false);
+    const checkHandler = () => {
+        setChecked(!checked);
+    };
 
     return (
         <>
@@ -24,27 +29,46 @@ function Task({ task }: TaskProps) {
                     document.body
                 )}
 
-            <form style={{ display: "flex", justifyContent: "space-between" }}>
-                <input title="checkbox" type="checkbox" name="checkbox" />
+            <div className={styles.formContainer}>
+                <form
+                    className={styles.form}
+                    style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                    }}>
+                    <input
+                        title="checkbox"
+                        type="checkbox"
+                        name="checkbox"
+                        checked={checked}
+                        onChange={checkHandler}
+                    />
 
-                <div>{task.title}</div>
-                <button
-                    type="submit"
-                    onClick={(e) => {
-                        e.preventDefault();
-                        setShowModal(true);
-                    }}>
-                    edit
-                </button>
-                <button
-                    type="submit"
-                    onClick={(e) => {
-                        e.preventDefault();
-                        dispatch(removeTask({ id: task.id }));
-                    }}>
-                    delete
-                </button>
-            </form>
+                    <p className={styles.taskTitle}>{task.title}</p>
+                    <div className={styles.buttonContainer}>
+                        <button
+                            type="submit"
+                            className={styles.formButton}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                setShowModal(true);
+                            }}>
+                            edit
+                        </button>
+                        {checked && (
+                            <button
+                                type="submit"
+                                className={styles.formButton}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    dispatch(removeTask({ id: task.id }));
+                                }}>
+                                delete
+                            </button>
+                        )}
+                    </div>
+                </form>
+            </div>
         </>
     );
 }

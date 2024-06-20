@@ -25,26 +25,32 @@ function UpdateTaskForm({
 
     return (
         <div className={styles.modal}>
-            <div className="closeIcon">
-                <button
-                    title="modal"
-                    type="button"
-                    onClick={() => setShowModal(false)}
-                />
-            </div>
-
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
                     name="title"
                     id="title"
                     placeholder="Update Task"
+                    className={styles.formInput}
                     value={newTaskContent}
                     onChange={(e) => {
                         setNewTaskContent(e.target.value);
                     }}
                 />
-                <input type="submit" value="Save" />
+                <div className={styles.buttonContainer}>
+                    <input
+                        type="submit"
+                        value="Save"
+                        className={styles.formSubmit}
+                    />
+                    <button
+                        className={styles.closeIcon}
+                        title="modal"
+                        type="button"
+                        onClick={() => setShowModal(false)}>
+                        Cancel
+                    </button>
+                </div>
             </form>
         </div>
     );
